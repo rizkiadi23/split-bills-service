@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bill_list.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bill_list.description %>
+</p>
+
+<div id="bill_items_wrapper">
+  <%= render @bill_list.bill_items %>
+  <div id="form">
+    <%= render "bill_items/form" %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_bill_list_path(@bill_list) %> |
+<%= link_to 'Back', bill_lists_path %>

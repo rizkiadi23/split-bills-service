@@ -1,0 +1,5 @@
+<%= form_for([@bill_list, @bill_list.bill_items.build]) do |f| %>
+  <%= f.text_field :user, placeholder: "New User" %>
+  <%= f.text_field :paid_amount, placeholder: "Amount Pay" %>
+  <%= f.submit %>
+<% end %>
