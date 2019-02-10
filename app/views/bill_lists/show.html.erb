@@ -1,11 +1,18 @@
 <div class="container">
-  <div class="row">
-    <div class="col s12"><%= notice %></div>
-    <div class="col s6">
-      <strong>Title:</strong> <%= @bill_list.title %>
-    </div>
-    <div class="col s6">
-      <strong>Description:</strong> <%= @bill_list.description %>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2"><%= @bill_list.title %></h1>
+        <div class="row center">
+          <h5 class="header col s12 light"><%= @bill_list.description %></h5>
+        </div>
+        <div class="row center">
+          <a href="/calculate/<%= @bill_list.id %>" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Split The Bills Now!</a>
+        </div>
+        <br><br>
+
+      </div>
     </div>
   </div>
 

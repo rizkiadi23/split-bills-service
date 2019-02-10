@@ -102,9 +102,10 @@ class BillListsController < ApplicationController
       allEqual = arr.all? {|x| x.paid_amount < 1}
 
       if allEqual == false
-        if arr[arr.length-1].paid_amount != 0
-          msg << "#{arr[arr.length-1].user} harus membayar uang sebesar #{arr[arr.length-1].paid_amount} kepada #{arr[0].user}"
-        end
+        # if arr[arr.length-1].paid_amount != 0
+        #   msg << "#{arr[arr.length-1].user} harus membayar uang sebesar #{arr[arr.length-1].paid_amount} kepada #{arr[0].user}"
+        # end
+        msg << "#{arr[arr.length-1].user} harus membayar uang sebesar #{arr[arr.length-1].paid_amount} kepada #{arr[0].user}"
         
         arr[0].paid_amount = arr[0].paid_amount + arr[arr.length-1].paid_amount
         arr[arr.length-1].paid_amount = 0
