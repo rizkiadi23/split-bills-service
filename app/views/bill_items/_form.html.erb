@@ -1,5 +1,21 @@
-<%= form_for([@bill_list, @bill_list.bill_items.build]) do |f| %>
-  <%= f.text_field :user, placeholder: "New User" %>
-  <%= f.text_field :paid_amount, placeholder: "Amount Pay" %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <%= form_for([@bill_list, @bill_list.bill_items.build]) do |f| %>
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <%= f.text_field :user, placeholder: "New User" %>
+        <label for="icon_prefix">Name</label>
+      </div>
+
+      <div class="input-field col s6">
+        <i class="material-icons prefix">money</i>
+        <%= f.text_field :paid_amount, placeholder: "Amount Pay" %>
+        <label for="icon_money">Paid Amount</label>
+      </div>
+
+      <span style="float:right;">
+      <%= f.submit 'Add User to Bills', :class => 'btn waves-effect waves-light' %>
+      </span>
+    </div>
+  <% end %>
+</div>

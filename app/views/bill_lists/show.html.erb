@@ -1,21 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col s12"><%= notice %></div>
+    <div class="col s6">
+      <strong>Title:</strong> <%= @bill_list.title %>
+    </div>
+    <div class="col s6">
+      <strong>Description:</strong> <%= @bill_list.description %>
+    </div>
+  </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @bill_list.title %>
-</p>
+  <div id="bill_items_wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Paid Amount</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @bill_list.bill_items %>
+      </tbody>
+    </table>
 
-<p>
-  <strong>Description:</strong>
-  <%= @bill_list.description %>
-</p>
+    <br><br>
+    <span style="float:right;">
+      <a href="/calculate/<%= @bill_list.id %>" class="btn waves-effect waves-light" name="action">Calculate Bills!
+        <i class="material-icons right">send</i>
+      </a>
+    </span>
 
-<div id="bill_items_wrapper">
-  <%= render @bill_list.bill_items %>
-  <div id="form">
-    <%= render "bill_items/form" %>
+    <br><br>
+    <div id="form">
+      <h5>Add User to The Bill</h5><br>
+      <%= render "bill_items/form" %>
+    </div>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_bill_list_path(@bill_list) %> |
-<%= link_to 'Back', bill_lists_path %>

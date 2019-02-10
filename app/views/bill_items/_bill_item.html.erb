@@ -1,4 +1,6 @@
-<p>
-  <%= bill_item.user %> | <%= bill_item.paid_amount %> | <%= link_to "Delete", bill_list_bill_item_path(@bill_list, bill_item.id), method: :delete, data: { confirm: "Are you sure?"} %>
-</p>
+<tr>
+  <td><%= bill_item.user %></td>
+  <td><%= bill_item.paid_amount %></td>
+  <td><%= link_to "Delete", bill_list_bill_item_path(@bill_list, bill_item.id), method: :delete, data: { confirm: "Are you sure?"} %></td>
+</tr>
 
