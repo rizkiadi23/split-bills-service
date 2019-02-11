@@ -6,5 +6,5 @@
 
 ## How to Install
 1. run `bundle install`
-2. run `rake db:migrate`
+3. run `rake db:drop db:create db:migrate db:seed`
 3. run `rails s`
